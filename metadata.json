@@ -1,0 +1,5 @@
+{
+  "name": "Moteur Maroc - محرك البحث ديال الطوموبيلات",
+  "description": "An advanced car search engine aggregator for Morocco. It simulates searching across multiple platforms to find the best car deals and presents them in a professional, user-friendly interface. Built with React, TypeScript, and powered by the Gemini API.",
+  "requestFramePermissions": []
+}
