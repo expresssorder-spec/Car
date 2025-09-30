@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Moteur Maroc - محرك البحث ديال الطوموبيلات
 
-# Run and deploy your AI Studio app
+هذا المشروع هو محرك بحث متقدم لتجميع إعلانات السيارات في المغرب. كيقلب فبزاف ديال المنصات باش يلقى ليك أحسن العروض ويعرضهم بطريقة احترافية وساهلة.
 
-This contains everything you need to run your app locally.
+## كيفاش تخدم بالمشروع (How to Use)
 
-View your app in AI Studio: https://ai.studio/apps/drive/131OHf5ZKQLDn2f87yskSYEh8oFguzbcs
+المشروع دابا ساهل بزاف للاستعمال. كلشي كيدار مباشرة من المتصفح.
 
-## Run Locally
+1.  **جيب المفتاح السري ديالك**: خاص يكون عندك مفتاح سري (API Key) ديال Google Gemini API.
+2.  **فتح الموقع**: فاش كتحل الموقع، غادي تلقى خانة الفوق.
+3.  **حط المفتاح ديالك**: لصق (paste) داك المفتاح السري فديك الخانة. المفتاح كيتسجل فالمتصفح ديالك باش ما تحتاجش تعاود تدخلو مرة خرى.
+4.  **بدا تقلب!**: مباشرة موراها، تقدر تبدا تقلب على أي طوموبيل بغيتي.
 
-**Prerequisites:**  Node.js
+### النشر على GitHub Pages (Deployment)
 
+إلا بغيتي تنشر هاد المشروع فالحساب ديالك.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1.  **عدل `package.json`**:
+    - فتح ملف `package.json`.
+    - قلب على السطر ديال `homepage` وبدل `<your-github-username>` و `<your-repo-name>` بالمعلومات ديالك.
+
+2.  **عدل `vite.config.ts`**:
+    - فتح ملف `vite.config.ts`.
+    - قلب على السطر ديال `base` وبدل `'/<your-repo-name>/'` بالسمية ديال المستودع (repository) ديالك.
+
+3.  **نصب المكتبات (Install dependencies)**: فتح التيرمينال (Terminal) وكتب:
+    ```bash
+    npm install
+    ```
+
+4.  **نشر الموقع (Deploy)**: فالتيرمينال، كتب هاد الأمر:
+    ```bash
+    npm run deploy
+    ```
+
+وهكذا الموقع ديالك غادي يكون منشور على الرابط لي حطيتي ف `homepage`!

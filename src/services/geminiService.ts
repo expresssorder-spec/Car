@@ -2,16 +2,6 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import type { SearchResult } from '../types';
 
-// FIX: Use process.env.API_KEY as per coding guidelines.
-// This also resolves the TypeScript error regarding 'import.meta.env'.
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable is not set");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY });
-
 const responseSchema = {
   type: Type.ARRAY,
   items: {
@@ -50,7 +40,13 @@ const responseSchema = {
   },
 };
 
-export async function fetchCarListings(query: string): Promise<SearchResult[]> {
+export async function fetchCarListings(query: string, apiKey: string): Promise<SearchResult[]> {
+  if (!apiKey || !apiKey.trim()) {
+    throw new Error("Gemini API key is missing or empty.");
+  }
+  
+  const ai = new GoogleGenAI({ apiKey });
+
   try {
     const prompt = `
       أنت محرك بحث مغربي متخصص في تجميع إعلانات السيارات من عدة مواقع.
@@ -88,6 +84,6 @@ export async function fetchCarListings(query: string): Promise<SearchResult[]> {
 
   } catch (error) {
     console.error("Error fetching car listings from Gemini API:", error);
-    throw new Error("Failed to fetch car listings.");
+    throw error;
   }
 }
